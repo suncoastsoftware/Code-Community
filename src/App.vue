@@ -42,18 +42,18 @@
       </v-container>
     </v-content>
     <v-footer app fixed>
-      <span>Suncoast Software &copy; 2019</span>
+      <v-spacer></v-spacer>
+      <span class="mr-5">Suncoast Software &copy; 2019</span>
     </v-footer>
   </v-app>
 </template>
 
 <script>
-import Dashboard from "./components/Dashboard";
-
+//import Dashboard from "./components/Dashboard";
 export default {
   name: "App",
   components: {
-    Dashboard
+    //Dashboard
   },
   data() {
     return {
@@ -62,6 +62,13 @@ export default {
   },
   props: {
     source: String
+  },
+  methods: {
+    loadText() {
+      const reader = new FileReader();
+      reader.onload = e => console.log(e.target.result);
+      reader.readAsText("./assets/test.txt");
+    }
   }
 };
 </script>
