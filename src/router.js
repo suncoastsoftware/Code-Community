@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+import Blog from "./components/Blog";
+import Forum from "./components/Forum";
 
 Vue.use(Router);
 
@@ -10,6 +12,16 @@ export default new Router({
       path: "/",
       name: "home",
       component: Home
+    },
+    {
+      path: "/blog",
+      name: "blog",
+      component: Blog
+    },
+    {
+      path: "/forum",
+      name: "forum",
+      component: Forum
     },
     {
       path: "/about",
